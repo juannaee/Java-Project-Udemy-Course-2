@@ -19,16 +19,14 @@ public class Program {
 		Comments c1 = new Comments("have a good trip !!");
 		Comments c2 = new Comments("wow this is amazing!!!");
 
-		// Segundo post
-		Comments c3 = new Comments("have a good night");
-		Comments c4 = new Comments("I'll talk to you tomorrow");
-
 		Post post1 = new Post(dateAux, "Traveling to New Zealand", "I'm going to visit this wonderful country!", 12);
 
 		post1.addComment(c1);
 		post1.addComment(c2);
 		
 		System.out.println(post1);
+		
+		
 
 	}
 
