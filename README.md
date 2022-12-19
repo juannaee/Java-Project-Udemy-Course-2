@@ -8,4 +8,5 @@
 
 
 ## Data output example:
-![Exemple Java Project 2](https://user-images.githubusercontent.com/111204834/208492184-52ad6e79-bd78-4654-90ac-fb7bc6eef816.png)
+![Exemple Java Project 2](https://user-images.githubusercontent.com/111204834/208492438-a9bd725e-1ecf-46a2-baa7-4d39f28c0fea.png)
+
