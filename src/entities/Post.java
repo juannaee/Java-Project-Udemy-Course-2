@@ -1,12 +1,15 @@
 package entities;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Post {
 
-	private Instant datePost;
+	private static DateTimeFormatter fmtd01 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+	private LocalDateTime datePost;
 	private String titlePost;
 	private String contentPost;
 	private Integer likesPost;
@@ -16,18 +19,18 @@ public class Post {
 	public Post() {
 	}
 
-	public Post(Instant datePost, String titlePost, String contentPost, Integer likesPost) {
+	public Post(LocalDateTime datePost, String titlePost, String contentPost, Integer likesPost) {
 		this.datePost = datePost;
 		this.titlePost = titlePost;
 		this.contentPost = contentPost;
 		this.likesPost = likesPost;
 	}
 
-	public Instant getDatePost() {
+	public LocalDateTime getDatePost() {
 		return datePost;
 	}
 
-	public void setDatePost(Instant datePost) {
+	public void setDatePost(LocalDateTime datePost) {
 		this.datePost = datePost;
 	}
 
@@ -65,6 +68,20 @@ public class Post {
 
 	public void removeComment(Comments comment) {
 		listComments.remove(comment);
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(titlePost + "\n");
+		sb.append(likesPost);
+		sb.append(" Likes - ");
+		sb.append(fmtd01.format(datePost) + "\n");
+		sb.append(contentPost + "\n");
+		sb.append("Comments:\n");
+		for (Comments c : listComments) {
+			sb.append(c.getTextComment() + "\n");
+		}
+		return sb.toString();
 	}
 
 }
